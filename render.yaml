@@ -1,0 +1,19 @@
+# render.yaml
+
+services:
+  - type: web
+    name: cisia-alerts-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    
+    # Optional: define scaling and instance type
+    instanceType: "g1.small"
+    envVars:
+      - key: API_KEY
+        value: your_api_key_here
+      - key: OTHER_VAR
+        value: other_value_here
+    
+    # Optional: set up automatic deploy on push
+    autoDeploy: true
